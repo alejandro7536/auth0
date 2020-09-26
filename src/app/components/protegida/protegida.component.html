@@ -1,0 +1,29 @@
+<div class="container mt-5">
+
+  <div class="row">
+    <div class="col">
+      <h1>Perfil de usuario</h1>
+      <hr>
+
+    </div>
+
+  </div>
+  <div *ngIf="auth.userProfile$ | async as user">
+
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img [src]="user.picture" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{user.name}}</h5>
+            <p class="card-text">Login mediante auth0, con rutas protegidas solo para usuarios regitrasdos</p>
+            <p class="card-text"><small class="text-muted">{{user.email}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
